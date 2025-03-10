@@ -34,7 +34,7 @@ position_data <- read_csv('positions.csv') %>%
   mutate(
     # Build some custom sections by collapsing others
     section = case_when(
-      section %in% c('industry_positions', 'teaching_positions') ~ 'positions', 
+      section %in% c('industry_positions', 'teaching_positions', 'volunteer_positions') ~ 'positions', 
       section %in% c('data_science_writings', 'by_me_press', 'academic_articles') ~ 'writings',
       TRUE ~ section
     )
@@ -54,13 +54,10 @@ Contact {#contact}
 
 
 
-- <i class="fa fa-envelope"></i> mphill75@asu.edu
-- <i class="fa fa-github"></i> github.com/M-Gamez
-- <i class="fa fa-phone"></i> (###) 123-4567
+- <i class="fa fa-envelope"></i> MelissaPhillipsCV@gmail.com
 
 
-
-Language Skills {#skills}
+Technical Skills {#skills}
 --------------------------------------------------------------------------------
 
 
@@ -68,9 +65,10 @@ Language Skills {#skills}
 skills <- tribble(
   ~skill,               ~level,
   "R",                  5,
-  "SQL",                3.5,
-  "Javascript (d3.js)", 3,
-  "Python",             1,
+  "Excel",              4.5,
+  "SQL",                4,
+  "Tableau",            3,
+  "Power BI",           3,
 
 )
 build_skill_bars(skills)
@@ -78,11 +76,34 @@ build_skill_bars(skills)
 
 
 
-Open Source Contributions {#open-source}
+Analytical Skills {#a_skills}
 --------------------------------------------------------------------------------
 
-All projects available at `github.com/M-Gamez/`
+```{r}
+analytical <- tribble(
+  ~skill,               ~level,
+  "Statistics",           5,
+  "Data Visualization",   4.5,
+  "Data Cleaning",        4,
+  "Research Design",      5,
 
+)
+build_skill_bars(analytical)
+```
+
+Non-Technical Skills {#nt_skills}
+--------------------------------------------------------------------------------
+
+```{r}
+nt_skills <- tribble(
+  ~skill,               ~level,
+  "Project Management",   5,
+  "Problem-Solving",      5,
+  "Collaboration",        5,
+  "Attention to Detail",  5,
+)
+build_skill_bars(nt_skills)
+```
 
 
 More info {#more-info}
@@ -90,17 +111,11 @@ More info {#more-info}
 
 See full CV at https://github.com/M-Gamez/cv for more complete list of positions and publications.
 
-
-Disclaimer {#disclaimer}
---------------------------------------------------------------------------------
-
 Made w/ [**pagedown**](https://github.com/rstudio/pagedown). 
 
 Source code: [github.com/nstrayer/cv](https://github.com/nstrayer/cv).
 
 Last updated on `r Sys.Date()`.
-
-
 
 
 Main
@@ -110,8 +125,7 @@ Melissa Phillips {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
-intro_text <- "Currently searching for a program evaluation or data analyst position that allows me to utilize my problem-solving skills to drive positive social change.
-"
+intro_text <- "Dedicated and analytical professional with a Master’s degree in Program Evaluation and Data Analytics, and over three years of experience in data analysis, quality assurance, and project management. Proven ability to leverage data-driven insights to enhance operational efficiency and drive decision-making. Adept at managing cross-functional projects and fostering teamwork in fast-paced environments. Passionate about using data analysis to support mission-driven organizations and promote continuous improvement."
 
 
 cat(sanitize_links(intro_text))
